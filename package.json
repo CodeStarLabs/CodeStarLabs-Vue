@@ -1,0 +1,28 @@
+{
+  "name": "vite-vue-typescript-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --host",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueuse/core": "^11.0.0",
+    "animate.css": "^4.1.1",
+    "gsap": "^3.12.5",
+    "vue": "^3.4.15",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@arco-design/web-vue": "^2.56.0",
+    "@vitejs/plugin-vue": "^5.0.3",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.0.12",
+    "vite-plugin-vue-devtools": "^7.2.1",
+    "vue-tsc": "^2.0.21"
+  }
+}
