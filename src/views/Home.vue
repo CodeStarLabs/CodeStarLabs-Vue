@@ -1,6 +1,6 @@
 <template>
 <section class="hero-section">
-        <a-row justify="center" align="center">
+        <a-row justify="center" align="center" class="hero-section-content">
           <a-col :span="16">
             <h1 class="hero-title">Code Star Labs - 码星Labs</h1>
             <p class="hero-subtitle">点亮青春，编程未来——筑梦科技星辰，用代码创造未来</p>
@@ -13,7 +13,7 @@
         <a-row justify="center">
           <a-col :span="20">
             <a-card class="about-card">
-              <a-row :gutter="24">
+              <a-row :gutter="24" class="about-card-content">
                 <a-col :span="8">
                   <div class="icon-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="181.01123046875" height="180" viewBox="0 0 181.01123046875 180"><defs><mask id="master_svg0_20_642" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="68.22732543945312" y="44.769287109375" width="109.07088470458984" height="109.38462829589844" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask><mask id="master_svg1_20_646" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="68.22732543945312" y="44.769287109375" width="109.07088470458984" height="109.38462829589844" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask><mask id="master_svg2_20_659" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="39.915313720703125" y="53.076904296875" width="36.6663818359375" height="23.07692527770996" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask><mask id="master_svg3_20_663" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="39.915313720703125" y="53.076904296875" width="36.6663818359375" height="23.07692527770996" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask><mask id="master_svg4_20_668" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="53.8392333984375" y="79.384521484375" width="64.05012512207031" height="53.53846740722656" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask><mask id="master_svg5_20_672" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="53.8392333984375" y="79.384521484375" width="64.05012512207031" height="53.53846740722656" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask></defs><g><g><g mask="url(#master_svg0_20_642)"><g><g><g mask="url(#master_svg1_20_646)"><g><path d="M101.64474487304688,134.7692C101.64474487304688,117.77590000000001,115.25554487304687,103.9998,132.04534487304687,103.9998C148.8353448730469,103.9998,162.44594487304687,117.77590000000001,162.44594487304687,134.7692L101.64474487304688,134.7692ZM132.04534487304687,100.1539C119.44804487304688,100.1539,109.24489487304687,89.8269,109.24489487304687,77.0769C109.24489487304687,64.3269,119.44804487304688,54,132.04534487304687,54C144.6426448730469,54,154.84584487304687,64.3269,154.84584487304687,77.0769C154.84584487304687,89.8269,144.6426448730469,100.1539,132.04534487304687,100.1539Z" fill="#5D94F3" fill-opacity="1"/></g></g></g></g></g><g><rect x="85.86431884765625" y="76.15380859375" width="36.6663818359375" height="2.307692766189575" rx="0" fill="#5D94F3" fill-opacity="1"/></g><g><rect x="85.86431884765625" y="64.615478515625" width="36.6663818359375" height="2.307692766189575" rx="0" fill="#5D94F3" fill-opacity="1"/></g><g><rect x="85.86431884765625" y="53.076904296875" width="36.6663818359375" height="2.307692766189575" rx="0" fill="#5D94F3" fill-opacity="1"/></g></g><g><g><g><ellipse cx="90" cy="90.00000762939453" rx="90" ry="90.00000762939453" fill="#E4EBF7" fill-opacity="1"/></g></g><g><rect x="39.915313720703125" y="99.230712890625" width="82.61539459228516" height="2.307692766189575" rx="0" fill="#5D94F3" fill-opacity="1"/></g><g><rect x="39.915313720703125" y="87.692138671875" width="82.61539459228516" height="2.307692766189575" rx="0" fill="#5D94F3" fill-opacity="1"/></g><g mask="url(#master_svg2_20_659)"><g><g><g mask="url(#master_svg3_20_663)"><g><path d="M76.58171372070314,64.615404296875L67.93911372070312,71.867904296875L65.77881372070313,70.055104296875L72.26121372070313,64.615404296875L65.77881372070313,59.175624296875L67.93911372070312,57.362804296875L76.58171372070314,64.615404296875ZM44.23583372070313,64.615404296875L50.71811372070312,70.055104296875L48.55790372070312,71.867904296875L39.915313720703125,64.615404296875L48.55790372070312,57.362804296875L50.71661372070312,59.175624296875L44.23583372070313,64.615404296875ZM54.869113720703126,76.153804296875L51.618013720703125,76.153804296875L61.62791372070312,53.076904296875L64.87901372070313,53.076904296875L54.869113720703126,76.153804296875Z" fill="#5D94F3" fill-opacity="1"/></g></g></g></g></g><g><g><rect x="28.776153564453125" y="43.84619140625" width="102.10890197753906" height="70.61540222167969" rx="17" fill-opacity="0" stroke-opacity="1" stroke="#5D94F3" fill="none" stroke-width="6"/></g></g><g mask="url(#master_svg4_20_668)"><g><g><g mask="url(#master_svg5_20_672)"><g><path d="M89.86582001953124,124.413547265625C101.78892001953125,124.413547265625,112.21772001953124,128.673247265625,117.88942001953126,135.028747265625L111.89192001953126,137.384447265625C107.27512001953124,132.841047265625,99.13542001953125,129.822647265625,89.86582001953124,129.822647265625C80.59622001953124,129.822647265625,72.45652001953125,132.841047265625,67.83964001953125,137.384447265625L61.84552001953125,135.025947265625C67.51730001953125,128.670447265625,77.94272001953125,124.413547265625,89.86582001953124,124.413547265625ZM89.86582001953124,83.845947265625C98.85672001953125,83.845947265625,106.14532001953125,89.900177265625,106.14532001953125,97.36844726562501L106.14532001953125,105.482047265625C106.14532001953125,112.950347265625,98.85672001953125,119.004547265625,89.86582001953124,119.004547265625C80.87492001953125,119.004547265625,73.58632001953126,112.950347265625,73.58632001953126,105.482047265625L73.58632001953126,97.36844726562501C73.58632001953126,89.900177265625,80.87492001953125,83.845947265625,89.86582001953124,83.845947265625Z" fill="#5D94F3" fill-opacity="1"/></g></g></g></g></g></g></g></svg>                  
@@ -24,9 +24,6 @@
                   <h1 class="about-text">{{ aboutText }}</h1>
                   <a-button type="primary" shape="round" size="large" class="join-button">
                     加入我们
-                    <template #icon>
-                      <icon-right />
-                    </template>
                   </a-button>
                 </a-col>
               </a-row>
@@ -36,7 +33,7 @@
       </section>
 
       <section class="vision-section">
-        <a-row justify="center" align="center">
+        <a-row justify="center" align="center" class="vision-section-content">
           <a-col :span="16" class="text-center">
             <h2 class="vision-title">我们虽是学生<br />但未来由我们创造</h2>
           </a-col>
@@ -58,8 +55,8 @@
         </a-row>
       </section>
 
-      <section class="collaboration-section">
-        <a-row justify="center" align="center">
+      <section class="collaboration-section vision-section-2">
+        <a-row justify="center" align="center" class="vision-section-content">
           <a-col :span="16" class="text-center">
             <h2 class="collaboration-title">我们在一起<br />共同发展</h2>
           </a-col>
@@ -119,7 +116,7 @@ const teamMembers: TeamMember[] = [
     avatar: 'https://avatars.githubusercontent.com/u/155857563?v=4',
     roles: ['前端UI', '管理员'],
     GithubUrl: 'https://github.com/SoulCodingYanhun',
-  }
+  },
 ];
 
 const github = (url: string) => {
@@ -175,19 +172,6 @@ onMounted(() => {
     ease: 'power3.out'
   });
 
-  // Team members animation
-  gsap.from('.team-member-card', {
-    scrollTrigger: {
-      trigger: '.team-section',
-      start: 'top 80%',
-    },
-    duration: 0.8,
-    y: 50,
-    opacity: 0,
-    stagger: 0.2,
-    ease: 'power3.out'
-  });
-
   // Vision and Collaboration sections parallax effect
   gsap.to('.vision-section, .collaboration-section', {
     scrollTrigger: {
@@ -236,13 +220,17 @@ onMounted(() => {
 
 /* 英雄区域样式 */
 .hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://krseoul.imgtbl.com/i/2024/08/16/66bf4a07c05d8.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://static.codestarlabs.top/public/7a3ca0c32d1899d25bd502c64b29a1599b17e0cc759392cf3b2b98c5163d5e48.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  padding: 150px 0;
   text-align: center;
+}
+
+.hero-section-content {
+  padding: 33vh 0;
+  backdrop-filter: blur(5px);
 }
 
 .hero-title {
@@ -274,6 +262,14 @@ onMounted(() => {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: all 0.3s ease;
+  padding: 22px;
+}
+
+.about-card-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .about-card:hover {
@@ -289,9 +285,10 @@ onMounted(() => {
 }
 
 .about-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--color-text-1);
   margin-bottom: 20px;
+  margin-top: 0;
 }
 
 .about-text {
@@ -309,13 +306,21 @@ onMounted(() => {
 
 /* 愿景和合作部分样式 */
 .vision-section, .collaboration-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://krseoul.imgtbl.com/i/2024/08/16/66bf4a99b82d4.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('https://static.codestarlabs.top/public/157118479783ac9d31ed75c97260833e2585c0ad6fd62c97804b966b0270ee0c.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  padding: 100px 0;
   text-align: center;
+}
+
+.vision-section-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('https://static.codestarlabs.top/public/7c3e9ee44856101de3e4a5441f5a4dcf5d78119b7f0e7744def90d716cddcd60.png');
+}
+
+.vision-section-content {
+  padding: 100px 0;
+  backdrop-filter: blur(5px);
 }
 
 .vision-title, .collaboration-title {

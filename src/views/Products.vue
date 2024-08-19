@@ -217,7 +217,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 70px;
+  margin-top: 58px;
 }
 
 .hero-content {
