@@ -43,7 +43,7 @@
                     <a-card v-for="member in teamMembers" :key="member.name" class="team-member-card">
                         <template #cover>
                             <a-avatar :size="240" class="member-avatar">
-                                <img :src="member.avatar" :alt="member.name" />
+                                <img :src="member.avatar" :alt="member.name"/>
                             </a-avatar>
                         </template>
                         <a-card-meta :title="member.name" :description="member.position" />
@@ -304,6 +304,8 @@ onUnmounted(() => {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    padding: 15px;
+    background: transparent;
 }
 
 .contact-card {

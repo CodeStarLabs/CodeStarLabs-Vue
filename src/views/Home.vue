@@ -4,7 +4,9 @@
           <a-col :span="16">
             <h1 class="hero-title">Code Star Labs - 码星Labs</h1>
             <p class="hero-subtitle">点亮青春，编程未来——筑梦科技星辰，用代码创造未来</p>
-            <a-button type="primary" size="large" shape="round" class="cta-button">加入我们</a-button>
+            <a-button type="outline" size="large" class="cta-button">
+              加入我们
+            </a-button>
           </a-col>
         </a-row>
       </section>
@@ -229,7 +231,7 @@ onMounted(() => {
 }
 
 .hero-section-content {
-  padding: 33vh 0;
+  padding: 30vh 0;
   backdrop-filter: blur(5px);
 }
 
@@ -248,7 +250,10 @@ onMounted(() => {
 
 .cta-button {
   font-size: 1.2rem;
-  padding: 0.5rem 2rem;
+  padding: 20px 30px 20px 30px;
+  border-color: #fff;
+  color: #fff;
+  border-radius: 5px;
 }
 
 /* 关于我们部分样式 */
