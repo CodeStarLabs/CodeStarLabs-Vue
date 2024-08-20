@@ -51,14 +51,14 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
-    scrollBehavior(to, from, savedPosition) {
+    scrollBehavior() {
         // 总是滚动到顶部
         return { top: 0 }
     }
 })
 
 // 全局前置守卫
-router.beforeEach((to, from, next) => {
+router.beforeEach((_to, from, next) => {
     // 如果不是通过浏览器的前进/后退按钮导航，则滚动到顶部
     if (!from.name) {
         window.scrollTo(0, 0)

@@ -2,7 +2,7 @@
   <router-view></router-view>
 </template>
 
-<script setuo lang="ts">
+<script setup lang="ts">
 
 </script>
 
