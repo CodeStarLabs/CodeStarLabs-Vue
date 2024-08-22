@@ -43,13 +43,6 @@
                     </a-button>
                 </a-form-item>
             </a-form>
-            <div class="additional-options">
-                <p>或者使用以下方式登录</p>
-                <div class="social-login">
-                    <a-button class="social-btn"><icon-github /> GitHub</a-button>
-                    <a-button class="social-btn"><icon-google /> Google</a-button>
-                </div>
-            </div>
             <div class="register-link">
                 没有账户？ <a-link @click="goToRegister">立即注册</a-link>
             </div>
@@ -61,7 +54,8 @@
 import { reactive } from 'vue';
 import { Message } from '@arco-design/web-vue';
 import { useRouter } from 'vue-router';
-import { IconUser, IconLock, IconGithub, IconGoogle, IconLeft } from '@arco-design/web-vue/es/icon';
+import { IconUser, IconLock, IconLeft } from '@arco-design/web-vue/es/icon';
+import axios from 'axios';
 
 interface FormState {
     username: string;
@@ -75,9 +69,29 @@ const form = reactive<FormState>({
     password: '',
 });
 
-const handleSubmit = () => {
-    console.log('Form submitted:', form);
-    Message.success('登录成功');
+const handleSubmit = async () => {
+    try {
+        const response = await axios.post('https://aabdv1vd-x4h914h5-tg76yme60lo8.c2.mcprev.cn/login', form);
+        if (response.data && response.data.user) {
+            Message.success('登录成功');
+            // 存储用户信息和token
+            localStorage.setItem('user', JSON.stringify(response.data.user));
+            localStorage.setItem('token', response.data.user.access_token);
+            // 重定向到主页或仪表板
+            router.push('/dashboard');
+        } else {
+            Message.error('登录失败，请检查您的用户名和密码');
+        }
+    } catch (error) {
+        console.error('Login error:', error);
+        if (axios.isAxiosError(error) && error.response) {
+            // 处理来自服务器的错误响应
+            Message.error(error.response.data.error || '登录时发生错误');
+        } else {
+            // 处理其他类型的错误
+            Message.error('登录时发生错误，请稍后重试');
+        }
+    }
 };
 
 const returnHome = () => {

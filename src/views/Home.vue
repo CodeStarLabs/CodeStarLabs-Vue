@@ -1,101 +1,102 @@
 <template>
-<section class="hero-section">
-        <a-row justify="center" align="center" class="hero-section-content">
-          <a-col :span="16">
-            <h1 class="hero-title">Code Star Labs - 码星Labs</h1>
-            <p class="hero-subtitle">点亮青春，编程未来——筑梦科技星辰，用代码创造未来</p>
-            <a-button type="outline" size="large" class="cta-button">
-              加入我们
-            </a-button>
-          </a-col>
-        </a-row>
-      </section>
+  <section class="hero-section" v-motion-fade id="1">
+    <a-row justify="center" align="center" class="hero-section-content">
+      <a-col :span="16">
+        <h1 class="hero-title" v-motion="heroTitleMotion">Code Star Labs - 码星Labs</h1>
+        <p class="hero-subtitle" v-motion="heroSubtitleMotion">点亮青春，编程未来——筑梦科技星辰，用代码创造未来</p>
+        <a-button type="outline" size="large" class="cta-button" v-motion-pop-visible-once @click="scrollTo('2')">
+          加入我们
+        </a-button>
+      </a-col>
+    </a-row>
+  </section>
 
-      <section class="about-section">
-        <a-row justify="center">
-          <a-col :span="20">
-            <a-card class="about-card">
-              <a-row :gutter="24" class="about-card-content">
-                <a-col :span="8">
-                  <div class="icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="181.01123046875" height="180" viewBox="0 0 181.01123046875 180"><defs><mask id="master_svg0_20_642" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="68.22732543945312" y="44.769287109375" width="109.07088470458984" height="109.38462829589844" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask><mask id="master_svg1_20_646" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="68.22732543945312" y="44.769287109375" width="109.07088470458984" height="109.38462829589844" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask><mask id="master_svg2_20_659" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="39.915313720703125" y="53.076904296875" width="36.6663818359375" height="23.07692527770996" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask><mask id="master_svg3_20_663" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="39.915313720703125" y="53.076904296875" width="36.6663818359375" height="23.07692527770996" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask><mask id="master_svg4_20_668" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="53.8392333984375" y="79.384521484375" width="64.05012512207031" height="53.53846740722656" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask><mask id="master_svg5_20_672" style="mask-type:alpha" maskUnits="userSpaceOnUse"><g><rect x="53.8392333984375" y="79.384521484375" width="64.05012512207031" height="53.53846740722656" rx="0" fill="#FFFFFF" fill-opacity="1"/></g></mask></defs><g><g><g mask="url(#master_svg0_20_642)"><g><g><g mask="url(#master_svg1_20_646)"><g><path d="M101.64474487304688,134.7692C101.64474487304688,117.77590000000001,115.25554487304687,103.9998,132.04534487304687,103.9998C148.8353448730469,103.9998,162.44594487304687,117.77590000000001,162.44594487304687,134.7692L101.64474487304688,134.7692ZM132.04534487304687,100.1539C119.44804487304688,100.1539,109.24489487304687,89.8269,109.24489487304687,77.0769C109.24489487304687,64.3269,119.44804487304688,54,132.04534487304687,54C144.6426448730469,54,154.84584487304687,64.3269,154.84584487304687,77.0769C154.84584487304687,89.8269,144.6426448730469,100.1539,132.04534487304687,100.1539Z" fill="#5D94F3" fill-opacity="1"/></g></g></g></g></g><g><rect x="85.86431884765625" y="76.15380859375" width="36.6663818359375" height="2.307692766189575" rx="0" fill="#5D94F3" fill-opacity="1"/></g><g><rect x="85.86431884765625" y="64.615478515625" width="36.6663818359375" height="2.307692766189575" rx="0" fill="#5D94F3" fill-opacity="1"/></g><g><rect x="85.86431884765625" y="53.076904296875" width="36.6663818359375" height="2.307692766189575" rx="0" fill="#5D94F3" fill-opacity="1"/></g></g><g><g><g><ellipse cx="90" cy="90.00000762939453" rx="90" ry="90.00000762939453" fill="#E4EBF7" fill-opacity="1"/></g></g><g><rect x="39.915313720703125" y="99.230712890625" width="82.61539459228516" height="2.307692766189575" rx="0" fill="#5D94F3" fill-opacity="1"/></g><g><rect x="39.915313720703125" y="87.692138671875" width="82.61539459228516" height="2.307692766189575" rx="0" fill="#5D94F3" fill-opacity="1"/></g><g mask="url(#master_svg2_20_659)"><g><g><g mask="url(#master_svg3_20_663)"><g><path d="M76.58171372070314,64.615404296875L67.93911372070312,71.867904296875L65.77881372070313,70.055104296875L72.26121372070313,64.615404296875L65.77881372070313,59.175624296875L67.93911372070312,57.362804296875L76.58171372070314,64.615404296875ZM44.23583372070313,64.615404296875L50.71811372070312,70.055104296875L48.55790372070312,71.867904296875L39.915313720703125,64.615404296875L48.55790372070312,57.362804296875L50.71661372070312,59.175624296875L44.23583372070313,64.615404296875ZM54.869113720703126,76.153804296875L51.618013720703125,76.153804296875L61.62791372070312,53.076904296875L64.87901372070313,53.076904296875L54.869113720703126,76.153804296875Z" fill="#5D94F3" fill-opacity="1"/></g></g></g></g></g><g><g><rect x="28.776153564453125" y="43.84619140625" width="102.10890197753906" height="70.61540222167969" rx="17" fill-opacity="0" stroke-opacity="1" stroke="#5D94F3" fill="none" stroke-width="6"/></g></g><g mask="url(#master_svg4_20_668)"><g><g><g mask="url(#master_svg5_20_672)"><g><path d="M89.86582001953124,124.413547265625C101.78892001953125,124.413547265625,112.21772001953124,128.673247265625,117.88942001953126,135.028747265625L111.89192001953126,137.384447265625C107.27512001953124,132.841047265625,99.13542001953125,129.822647265625,89.86582001953124,129.822647265625C80.59622001953124,129.822647265625,72.45652001953125,132.841047265625,67.83964001953125,137.384447265625L61.84552001953125,135.025947265625C67.51730001953125,128.670447265625,77.94272001953125,124.413547265625,89.86582001953124,124.413547265625ZM89.86582001953124,83.845947265625C98.85672001953125,83.845947265625,106.14532001953125,89.900177265625,106.14532001953125,97.36844726562501L106.14532001953125,105.482047265625C106.14532001953125,112.950347265625,98.85672001953125,119.004547265625,89.86582001953124,119.004547265625C80.87492001953125,119.004547265625,73.58632001953126,112.950347265625,73.58632001953126,105.482047265625L73.58632001953126,97.36844726562501C73.58632001953126,89.900177265625,80.87492001953125,83.845947265625,89.86582001953124,83.845947265625Z" fill="#5D94F3" fill-opacity="1"/></g></g></g></g></g></g></g></svg>                  
-                  </div>
-                </a-col>
-                <a-col :span="16">
-                  <h2 class="about-title">关于 Code Star Labs</h2>
-                  <h1 class="about-text">{{ aboutText }}</h1>
-                  <a-button type="primary" shape="round" size="large" class="join-button">
-                    加入我们
-                  </a-button>
-                </a-col>
-              </a-row>
+  <section class="about-section" ref="aboutSection" v-motion-slide-visible-once-bottom id="2">
+    <a-row justify="center">
+      <a-col :span="20">
+        <a-card class="about-card" v-motion="cardMotion">
+          <a-row :gutter="24" class="about-card-content">
+            <a-col :span="8">
+              <div class="icon-wrapper" v-motion="iconMotion">
+                <img src="/public/about.svg" alt="About" width="300" height="300">
+              </div>
+            </a-col>
+            <a-col :span="16">
+              <h2 class="about-title" v-motion="titleMotion">关于 Code Star Labs</h2>
+              <h1 class="about-text" v-motion="textMotion">{{ aboutText }}</h1>
+              <a-button type="primary" shape="round" size="large" class="join-button" v-motion="buttonMotion" @click="about()">
+                加入我们
+              </a-button>
+            </a-col>
+          </a-row>
+        </a-card>
+      </a-col>
+    </a-row>
+  </section>
+
+  <section class="vision-section" v-motion-fade id="3">
+    <a-row justify="center" align="center" class="vision-section-content">
+      <a-col :span="16" class="text-center">
+        <h2 class="vision-title" v-motion="visionTitleMotion">我们虽是学生<br />但未来由我们创造</h2>
+      </a-col>
+    </a-row>
+  </section>
+
+  <section class="timeline-section" ref="timelineSection" v-motion-slide-visible-once-bottom id="4">
+    <a-row justify="center">
+      <a-col :span="24">
+        <h2 class="section-title" v-motion="timelineTitleMotion">发展历程</h2>
+        <div class="timeline-container" v-motion="timelineMotion">
+          <a-timeline mode="alternate" :style="{ flex: 1 }">
+            <a-timeline-item v-for="(item, index) in timelineItems" :key="index" :label="item.date" v-motion="getTimelineItemMotion(index)">
+              {{ item.event }}
+            </a-timeline-item>
+          </a-timeline>
+        </div>
+      </a-col>
+    </a-row>
+  </section>
+
+  <section class="collaboration-section vision-section-2" v-motion-fade id="5">
+    <a-row justify="center" align="center" class="vision-section-content">
+      <a-col :span="16" class="text-center">
+        <h2 class="collaboration-title" v-motion="collaborationTitleMotion">我们在一起<br />共同发展</h2>
+      </a-col>
+    </a-row>
+  </section>
+
+  <section class="team-section" ref="teamSection" v-motion-slide-visible-once-bottom id="6">
+    <a-row justify="center">
+      <a-col :span="24">
+        <h2 class="section-title" v-motion="teamTitleMotion">团队成员</h2>
+        <a-row type="flex" justify="center" :gutter="[24, 24]">
+          <a-col :xs="20" :sm="12" :md="8" :lg="6" v-for="(member, index) in teamMembers" :key="member.name">
+            <a-card class="team-member-card" v-motion="getMemberCardMotion(index)">
+              <a-col>
+                <a-avatar :size="128" v-motion="getAvatarMotion(index)">
+                  <img :src="member.avatar" />
+                </a-avatar>
+              </a-col>
+              <a-col>
+                <h3 class="member-name">{{ member.name }}</h3>
+                <a-space>
+                  <a-tag v-for="role in member.roles" :key="role" color="arcoblue" v-motion="getTagMotion(index)">{{ role }}</a-tag>
+                </a-space>
+              </a-col>
+              <a-button type="outline" size="small" shape="round" class="mt-2"
+                @click="github(member.GithubUrl)" v-motion="getButtonMotion(index)">查看更多</a-button>
             </a-card>
           </a-col>
         </a-row>
-      </section>
-
-      <section class="vision-section">
-        <a-row justify="center" align="center" class="vision-section-content">
-          <a-col :span="16" class="text-center">
-            <h2 class="vision-title">我们虽是学生<br />但未来由我们创造</h2>
-          </a-col>
-        </a-row>
-      </section>
-
-      <section class="timeline-section">
-        <a-row justify="center">
-          <a-col :span="24">
-            <h2 class="section-title">发展历程</h2>
-            <div class="timeline-container">
-              <a-timeline mode="alternate" :style="{ flex: 1 }">
-      <a-timeline-item label="2023-07-21">CodeStarLabs正式创立</a-timeline-item>
-      <a-timeline-item label="2023-08-07">CodeStarLabs正式上线</a-timeline-item>
-      <a-timeline-item label="" position="bottom">敬请期待</a-timeline-item>
-    </a-timeline>
-            </div>
-          </a-col>
-        </a-row>
-      </section>
-
-      <section class="collaboration-section vision-section-2">
-        <a-row justify="center" align="center" class="vision-section-content">
-          <a-col :span="16" class="text-center">
-            <h2 class="collaboration-title">我们在一起<br />共同发展</h2>
-          </a-col>
-        </a-row>
-      </section>
-
-      <section class="team-section">
-        <a-row justify="center">
-          <a-col :span="24">
-            <h2 class="section-title">团队成员</h2>
-            <a-row type="flex" justify="center" :gutter="[24, 24]">
-              <a-col :xs="20" :sm="12" :md="8" :lg="6" v-for="member in teamMembers" :key="member.name">
-                <a-card class="team-member-card">
-                  <a-col>
-                    <a-avatar :size="128">
-                      <img :src="member.avatar"/>
-                    </a-avatar>
-                  </a-col>
-                  <a-col>
-                    <h3 class="member-name">{{ member.name }}</h3>
-                  <a-space>
-                    <a-tag v-for="role in member.roles" :key="role" color="arcoblue">{{ role }}</a-tag>
-                  </a-space>
-                  </a-col>
-                  <a-button type="outline" size="small" shape="round" class="mt-2" @click="github(member.GithubUrl)">查看更多</a-button>
-                </a-card>
-              </a-col>
-            </a-row>
-          </a-col>
-        </a-row>
-      </section>
+      </a-col>
+    </a-row>
+  </section>
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ref } from 'vue'
+import { useMotion } from '@vueuse/motion'
+import router from '../router';
 
 interface TeamMember {
   name: string;
@@ -107,8 +108,8 @@ interface TeamMember {
 const aboutText = `Code Star Labs（码星Labs或码星实验室）是一个高质量的青少年编程云团队，这里面聚集着众多编程大佬。我们在这里一起学习和相互交流，以提升自己的各项技能。同时，我们都以编程为爱好，共同研究和讨论各种编程技术问题。目前我们已有30+的成员，且在各成员以及与其他团队的合作下开发出了一系列优质的产品。Code Star Labs 非常欢迎你的加入！`;
 
 const teamMembers: TeamMember[] = [
-  { 
-    name: 'CoderMeowHacker', 
+  {
+    name: 'CoderMeowHacker',
     avatar: 'https://avatars.githubusercontent.com/u/158447241?v=4',
     roles: ['创始人'],
     GithubUrl: 'https://github.com/codemiao08',
@@ -121,72 +122,136 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
+const timelineItems = [
+  { date: '2023-07-21', event: 'CodeStarLabs正式创立' },
+  { date: '2023-08-07', event: 'CodeStarLabs正式上线' },
+  { date: '', event: '敬请期待' },
+];
+
 const github = (url: string) => {
   location.href = url;
 }
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+const about = () => {
+  router.push('/about');
+}
 
-onMounted(() => {
-  // Hero section animation
-  gsap.from('.hero-title', { 
-    duration: 1, 
-    y: 50, 
-    opacity: 0, 
-    ease: 'power3.out' 
-  });
-  gsap.from('.hero-subtitle', { 
-    duration: 1, 
-    y: 30, 
-    opacity: 0, 
-    delay: 0.5, 
-    ease: 'power3.out' 
-  });
-  // gsap.from('.cta-button', { 
-  //   duration: 1, 
-  //   y: 20, 
-  //   opacity: 0, 
-  //   delay: 1, 
-  //   ease: 'power3.out' 
-  // });
+const currentSection = ref('2');
 
-  // About section animation
-  gsap.from('.about-card', {
-    scrollTrigger: {
-      trigger: '.about-section',
-      start: 'top 80%',
-    },
-    duration: 1,
-    y: 50,
-    opacity: 0,
-    ease: 'power3.out'
-  });
+const scrollTo = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        currentSection.value = sectionId;
+    }
+};
 
-  // Timeline animation
-  gsap.from('.timeline-container', {
-    scrollTrigger: {
-      trigger: '.timeline-section',
-      start: 'top 80%',
-    },
-    duration: 1,
-    opacity: 0,
-    ease: 'power3.out'
-  });
+// Refs for scroll-based animations
+const aboutSection = ref(null)
+const timelineSection = ref(null)
+const teamSection = ref(null)
 
-  // Vision and Collaboration sections parallax effect
-  gsap.to('.vision-section, .collaboration-section', {
-    scrollTrigger: {
-      trigger: '.vision-section',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: true,
-    },
-    backgroundPosition: '50% 100%',
-    ease: 'none'
-  });
-});
+// Motion definitions with smoother transitions
+const heroTitleMotion = {
+  initial: { opacity: 0, y: 50 },
+  enter: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+}
 
+const heroSubtitleMotion = {
+  initial: { opacity: 0, y: 50 },
+  enter: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 200 } },
+}
+
+const cardMotion = {
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+}
+
+const iconMotion = {
+  initial: { opacity: 0, scale: 0.8, rotate: -10 },
+  visible: { opacity: 1, scale: 1, rotate: 0, transition: { type: 'spring', stiffness: 150, damping: 15, delay: 200 } },
+}
+
+const titleMotion = {
+  initial: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 300 } },
+}
+
+const textMotion = {
+  initial: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 400 } },
+}
+
+const buttonMotion = {
+  initial: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, damping: 15, delay: 500 } },
+}
+
+const visionTitleMotion = {
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+}
+
+const timelineTitleMotion = {
+  initial: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+}
+
+const timelineMotion = {
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 200 } },
+}
+
+const getTimelineItemMotion = (index: number) => ({
+  initial: { opacity: 0, x: index % 2 === 0 ? -30 : 30 },
+  visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 200 + index * 100 } },
+})
+
+const collaborationTitleMotion = {
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+}
+
+const teamTitleMotion = {
+  initial: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+}
+
+const getMemberCardMotion = (index: number) => ({
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 100 * index } },
+})
+
+const getAvatarMotion = (index: number) => ({
+  initial: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 150, damping: 15, delay: 200 + 100 * index } },
+})
+
+const getTagMotion = (index: number) => ({
+  initial: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 150, damping: 15, delay: 300 + 100 * index } },
+})
+
+const getButtonMotion = (index: number) => ({
+  initial: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 150, damping: 15, delay: 400 + 100 * index } },
+})
+
+// Use the useMotion composable for scroll-based animations
+useMotion(aboutSection, {
+  initial: { opacity: 0, y: 100 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+})
+
+useMotion(timelineSection, {
+  initial: { opacity: 0, y: 100 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+})
+
+useMotion(teamSection, {
+  initial: { opacity: 0, y: 100 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+})
 </script>
 
 <style scoped>
@@ -201,7 +266,7 @@ onMounted(() => {
 .header {
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   z-index: 1000;
@@ -222,7 +287,7 @@ onMounted(() => {
 
 /* 英雄区域样式 */
 .hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://static.codestarlabs.top/public/7a3ca0c32d1899d25bd502c64b29a1599b17e0cc759392cf3b2b98c5163d5e48.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../public/介绍.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -239,13 +304,13 @@ onMounted(() => {
   font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .cta-button {
@@ -258,7 +323,7 @@ onMounted(() => {
 
 /* 关于我们部分样式 */
 .about-section {
-  padding: 80px 0;
+  padding: 130px 0;
   background-color: var(--color-bg-2);
 }
 
@@ -310,8 +375,9 @@ onMounted(() => {
 }
 
 /* 愿景和合作部分样式 */
-.vision-section, .collaboration-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('https://static.codestarlabs.top/public/157118479783ac9d31ed75c97260833e2585c0ad6fd62c97804b966b0270ee0c.png');
+.vision-section,
+.collaboration-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('../public/创造.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -320,7 +386,7 @@ onMounted(() => {
 }
 
 .vision-section-2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('https://static.codestarlabs.top/public/7c3e9ee44856101de3e4a5441f5a4dcf5d78119b7f0e7744def90d716cddcd60.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('../public/发展.png');
 }
 
 .vision-section-content {
@@ -328,10 +394,11 @@ onMounted(() => {
   backdrop-filter: blur(5px);
 }
 
-.vision-title, .collaboration-title {
+.vision-title,
+.collaboration-title {
   font-size: 2.5rem;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* 发展历程部分样式 */
@@ -364,12 +431,12 @@ onMounted(() => {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .team-member-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .member-name {
@@ -413,7 +480,8 @@ onMounted(() => {
     font-size: 1rem;
   }
 
-  .vision-title, .collaboration-title {
+  .vision-title,
+  .collaboration-title {
     font-size: 2rem;
   }
 

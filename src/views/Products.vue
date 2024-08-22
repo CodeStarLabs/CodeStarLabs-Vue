@@ -1,23 +1,24 @@
 <template>
   <div class="app-container">
     <main>
-      <section class="hero">
-        <div class="hero-content">
+      <section class="hero" v-motion-slide-visible-once-bottom>
+        <div class="hero-content" v-motion="heroContentMotion">
           <h1 class="hero-title">创新编程工具</h1>
           <p class="hero-subtitle">为青少年打造的高质量编程学习和开发平台</p>
-          <a-button type="primary" size="large" @click="scrollTo('about')" class="cta-button">
+          <a-button type="primary" size="large" @click="scrollTo('about')" class="cta-button"
+            v-motion="ctaButtonMotion">
             探索产品
             <template #icon><icon-right /></template>
           </a-button>
         </div>
-        <div class="hero-image">
+        <div class="hero-image" v-motion="heroImageMotion">
           <!-- <img src="/api/placeholder/600/400" alt="产品展示" class="floating-image" /> -->
         </div>
       </section>
 
-      <section id="about" class="section">
-        <h2 class="section-title">关于我们的产品</h2>
-        <div class="section-content">
+      <section id="about" class="section" v-motion-slide-visible-once-bottom>
+        <h2 class="section-title" v-motion="sectionTitleMotion">关于我们的产品</h2>
+        <div class="section-content" v-motion="sectionContentMotion">
           <h3>
             Code Star Labs 致力于为青少年开发者提供最先进、最易用的编程工具。
             我们的产品涵盖了从入门学习到高级开发的各个阶段，旨在激发创造力、培养问题解决能力，
@@ -26,10 +27,11 @@
         </div>
       </section>
 
-      <section id="features" class="section bg-gradient">
-        <h2 class="section-title">产品特性</h2>
+      <section id="features" class="section bg-gradient" v-motion-slide-visible-once-bottom>
+        <h2 class="section-title" v-motion="sectionTitleMotion">产品特性</h2>
         <div class="feature-grid">
-          <div v-for="feature in features" :key="feature.title" class="feature-item">
+          <div v-for="(feature, index) in features" :key="feature.title" class="feature-item"
+            v-motion="getFeatureItemMotion(index)">
             <div class="feature-icon-wrapper">
               <component :is="feature.icon" class="feature-icon" />
             </div>
@@ -39,10 +41,11 @@
         </div>
       </section>
 
-      <section id="products" class="section">
-        <h2 class="section-title">我们的产品</h2>
+      <section id="products" class="section" v-motion-slide-visible-once-bottom>
+        <h2 class="section-title" v-motion="sectionTitleMotion">我们的产品</h2>
         <div class="product-grid">
-          <a-card v-for="product in products" :key="product.name" class="product-card" :bodyStyle="{ padding: '20px' }">
+          <a-card v-for="(product, index) in products" :key="product.name" class="product-card"
+            :bodyStyle="{ padding: '20px' }" v-motion="getProductCardMotion(index)">
             <template #cover>
               <div class="product-image-wrapper">
                 <img :src="product.image" :alt="product.name" class="product-image" />
@@ -56,11 +59,11 @@
         </div>
       </section>
 
-      <section id="contact" class="section bg-gradient">
-        <h2 class="section-title">联系我们</h2>
-        <a-card class="contact-card">
+      <section id="contact" class="section bg-gradient" v-motion-slide-visible-once-bottom>
+        <h2 class="section-title" v-motion="sectionTitleMotion">联系我们</h2>
+        <a-card class="contact-card" v-motion="contactCardMotion">
           <p>对我们的产品感兴趣？想要了解更多信息？</p>
-          <a-button type="primary" size="large" class="contact-button">
+          <a-button type="primary" size="large" class="contact-button" v-motion="contactButtonMotion">
             联系我们
             <template #icon><icon-send /></template>
           </a-button>
@@ -125,6 +128,52 @@ const handleScroll = () => {
 
 const url = (url: string) => {
   location.href = url;
+}
+
+// Motion definitions
+const heroContentMotion = {
+  initial: { opacity: 0, y: 100 },
+  enter: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 200 } },
+}
+
+const heroImageMotion = {
+  initial: { opacity: 0, scale: 0.8 },
+  enter: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 400 } },
+}
+
+const ctaButtonMotion = {
+  initial: { opacity: 0, scale: 0.8 },
+  enter: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, damping: 15, delay: 600 } },
+}
+
+const sectionTitleMotion = {
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+}
+
+const sectionContentMotion = {
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 200 } },
+}
+
+const getFeatureItemMotion = (index: number) => ({
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 100 * index } },
+})
+
+const getProductCardMotion = (index: number) => ({
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 100 * index } },
+})
+
+const contactCardMotion = {
+  initial: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+}
+
+const contactButtonMotion = {
+  initial: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, damping: 15, delay: 200 } },
 }
 
 onMounted(() => {

@@ -2,7 +2,7 @@
     <div class="app-container">
         <main>
             <section class="hero">
-                <div class="hero-content">
+                <div v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" class="hero-content">
                     <h1 class="hero-title">Code Star Labs</h1>
                     <p class="hero-subtitle">高质量的青少年编程云团队，聚集众多编程大佬</p>
                     <a-button type="primary" size="large" @click="scrollTo('about')" class="cta-button">
@@ -10,14 +10,15 @@
                         <template #icon><icon-right /></template>
                     </a-button>
                 </div>
-                <div class="hero-image">
-                    
+                <div v-motion :initial="{ opacity: 0, x: 100 }" :enter="{ opacity: 1, x: 0 }" class="hero-image">
+                    <!-- Hero image content -->
                 </div>
             </section>
 
             <section id="about" class="section">
-                <h2 class="section-title">关于我们</h2>
-                <div class="section-content">
+                <h2 v-motion :initial="{ opacity: 0, y: 50 }" :enter="{ opacity: 1, y: 0 }" class="section-title">关于我们
+                </h2>
+                <div v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1 }" class="section-content">
                     <p>
                         Code Star
                         Labs（码星Labs或码星实验室）是一个高质量的青少年编程云团队，这里面聚集着众多编程大佬。我们在这里一起学习和相互交流，以提升自己的各项技能。同时，我们都以编程为爱好，共同研究和讨论各种编程技术问题。目前我们已有30+的成员，且在各成员以及与其他团队的合作下开发出了一系列优质的产品。Code
@@ -27,9 +28,12 @@
             </section>
 
             <section id="features" class="section">
-                <h2 class="section-title">我们的特色</h2>
+                <h2 v-motion :initial="{ opacity: 0, y: 50 }" :enter="{ opacity: 1, y: 0 }" class="section-title">我们的特色
+                </h2>
                 <div class="feature-grid">
-                    <div class="feature-item" v-for="feature in features" :key="feature.title">
+                    <div v-for="(feature, index) in features" :key="feature.title" v-motion
+                        :initial="{ opacity: 0, y: 50 }"
+                        :enter="{ opacity: 1, y: 0, transition: { delay: index * 100 } }" class="feature-item">
                         <component :is="feature.icon" class="feature-icon" />
                         <h3>{{ feature.title }}</h3>
                         <p>{{ feature.description }}</p>
@@ -38,25 +42,31 @@
             </section>
 
             <section id="team" class="section">
-                <h2 class="section-title">团队成员</h2>
+                <h2 v-motion :initial="{ opacity: 0, y: 50 }" :enter="{ opacity: 1, y: 0 }" class="section-title">团队成员
+                </h2>
                 <div class="team-grid">
-                    <a-card v-for="member in teamMembers" :key="member.name" class="team-member-card">
+                    <a-card v-for="(member, index) in teamMembers" :key="member.name" v-motion
+                        :initial="{ opacity: 0, y: 50 }"
+                        :enter="{ opacity: 1, y: 0, transition: { delay: index * 100 } }" class="team-member-card">
                         <template #cover>
                             <a-avatar :size="240" class="member-avatar">
-                                <img :src="member.avatar" :alt="member.name"/>
+                                <img :src="member.avatar" :alt="member.name" />
                             </a-avatar>
                         </template>
                         <a-card-meta :title="member.name" :description="member.position" />
                         <template #actions>
-                            <a-button type="primary" class="view-more-btn" @click="github(member.GithubUrl)">查看更多</a-button>
+                            <a-button type="primary" class="view-more-btn"
+                                @click="github(member.GithubUrl)">查看更多</a-button>
                         </template>
                     </a-card>
                 </div>
             </section>
 
             <section id="contact" class="section">
-                <h2 class="section-title">加入我们</h2>
-                <a-card class="contact-card">
+                <h2 v-motion :initial="{ opacity: 0, y: 50 }" :enter="{ opacity: 1, y: 0 }" class="section-title">加入我们
+                </h2>
+                <a-card v-motion :initial="{ opacity: 0, scale: 0.9 }" :enter="{ opacity: 1, scale: 1 }"
+                    class="contact-card">
                     <p>我们欢迎热爱编程的青少年加入 Code Star Labs！</p>
                     <a-button type="primary" size="large" class="join-button">
                         立即加入
@@ -88,12 +98,12 @@ const teamMembers: TeamMember[] = [
 ];
 
 const features = [
-  { icon: IconCode, title: '技能提升', description: '通过互相学习和交流，不断提升编程技能。' },
-  { icon: IconUserGroup, title: '团队合作', description: '与其他成员合作，开发高质量的项目和产品。' },
-  { icon: IconExperiment, title: '创新实践', description: '探索和实践各种新兴的编程技术。' },
-  { icon: IconFire, title: '职业发展', description: '为未来的职业发展打下坚实的基础。' },
-  { icon: IconBulb, title: '创意激发', description: '在充满活力的环境中激发创新思维和独特想法。' },
-  { icon: IconSend, title: '项目孵化', description: '将创意转化为实际项目，并获得团队支持和指导。' },
+    { icon: IconCode, title: '技能提升', description: '通过互相学习和交流，不断提升编程技能。' },
+    { icon: IconUserGroup, title: '团队合作', description: '与其他成员合作，开发高质量的项目和产品。' },
+    { icon: IconExperiment, title: '创新实践', description: '探索和实践各种新兴的编程技术。' },
+    { icon: IconFire, title: '职业发展', description: '为未来的职业发展打下坚实的基础。' },
+    { icon: IconBulb, title: '创意激发', description: '在充满活力的环境中激发创新思维和独特想法。' },
+    { icon: IconSend, title: '项目孵化', description: '将创意转化为实际项目，并获得团队支持和指导。' },
 ];
 
 const scrollTo = (sectionId: string) => {
@@ -118,7 +128,7 @@ const handleScroll = () => {
     }
 };
 
-const github = (url: string) =>{
+const github = (url: string) => {
     location.href = url;
 }
 
