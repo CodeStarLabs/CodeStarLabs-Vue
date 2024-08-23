@@ -1,8 +1,8 @@
 <template>
     <div class="app-container">
         <main>
-            <section class="hero">
-                <div v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" class="hero-content">
+            <section class="hero" v-motion-slide-visible-once-bottom>
+                <div v-motion="heroContentMotion" class="hero-content">
                     <h1 class="hero-title">Code Star Labs</h1>
                     <p class="hero-subtitle">高质量的青少年编程云团队，聚集众多编程大佬</p>
                     <a-button type="primary" size="large" @click="scrollTo('about')" class="cta-button">
@@ -11,14 +11,14 @@
                     </a-button>
                 </div>
                 <div v-motion :initial="{ opacity: 0, x: 100 }" :enter="{ opacity: 1, x: 0 }" class="hero-image">
-                    <!-- Hero image content -->
+
                 </div>
             </section>
 
-            <section id="about" class="section">
-                <h2 v-motion :initial="{ opacity: 0, y: 50 }" :enter="{ opacity: 1, y: 0 }" class="section-title">关于我们
+            <section id="about" class="section" v-motion-slide-visible-once-bottom>
+                <h2 v-motion="sectionTitleMotion" class="section-title">关于我们
                 </h2>
-                <div v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1 }" class="section-content">
+                <div v-motion="sectionContentMotion" class="section-content">
                     <p>
                         Code Star
                         Labs（码星Labs或码星实验室）是一个高质量的青少年编程云团队，这里面聚集着众多编程大佬。我们在这里一起学习和相互交流，以提升自己的各项技能。同时，我们都以编程为爱好，共同研究和讨论各种编程技术问题。目前我们已有30+的成员，且在各成员以及与其他团队的合作下开发出了一系列优质的产品。Code
@@ -27,13 +27,11 @@
                 </div>
             </section>
 
-            <section id="features" class="section">
-                <h2 v-motion :initial="{ opacity: 0, y: 50 }" :enter="{ opacity: 1, y: 0 }" class="section-title">我们的特色
+            <section id="features" class="section"  v-motion-slide-visible-once-bottom>
+                <h2 v-motion="sectionTitleMotion" class="section-title">我们的特色
                 </h2>
                 <div class="feature-grid">
-                    <div v-for="(feature, index) in features" :key="feature.title" v-motion
-                        :initial="{ opacity: 0, y: 50 }"
-                        :enter="{ opacity: 1, y: 0, transition: { delay: index * 100 } }" class="feature-item">
+                    <div v-for="(feature, index) in features" :key="feature.title" v-motion="getFeatureItemMotion(index)" class="feature-item">
                         <component :is="feature.icon" class="feature-icon" />
                         <h3>{{ feature.title }}</h3>
                         <p>{{ feature.description }}</p>
@@ -41,13 +39,11 @@
                 </div>
             </section>
 
-            <section id="team" class="section">
-                <h2 v-motion :initial="{ opacity: 0, y: 50 }" :enter="{ opacity: 1, y: 0 }" class="section-title">团队成员
+            <section id="team" class="section" v-motion-slide-visible-once-bottom>
+                <h2 v-motion="sectionTitleMotion" class="section-title">团队成员
                 </h2>
                 <div class="team-grid">
-                    <a-card v-for="(member, index) in teamMembers" :key="member.name" v-motion
-                        :initial="{ opacity: 0, y: 50 }"
-                        :enter="{ opacity: 1, y: 0, transition: { delay: index * 100 } }" class="team-member-card">
+                    <a-card v-for="(member, index) in teamMembers" :key="member.name" v-motion="getProductCardMotion(index)" class="team-member-card">
                         <template #cover>
                             <a-avatar :size="240" class="member-avatar">
                                 <img :src="member.avatar" :alt="member.name" />
@@ -62,13 +58,13 @@
                 </div>
             </section>
 
-            <section id="contact" class="section">
-                <h2 v-motion :initial="{ opacity: 0, y: 50 }" :enter="{ opacity: 1, y: 0 }" class="section-title">加入我们
+            <section id="contact" class="section" v-motion-slide-visible-once-bottom>
+                <h2 v-motion="sectionTitleMotion" class="section-title">加入我们
                 </h2>
-                <a-card v-motion :initial="{ opacity: 0, scale: 0.9 }" :enter="{ opacity: 1, scale: 1 }"
+                <a-card v-motion="contactCardMotion"
                     class="contact-card">
                     <p>我们欢迎热爱编程的青少年加入 Code Star Labs！</p>
-                    <a-button type="primary" size="large" class="join-button">
+                    <a-button type="primary" size="large" class="join-button" v-motion="contactButtonMotion">
                         立即加入
                         <template #icon><icon-right /></template>
                     </a-button>
@@ -130,6 +126,41 @@ const handleScroll = () => {
 
 const github = (url: string) => {
     location.href = url;
+}
+
+const heroContentMotion = {
+  initial: { opacity: 0, y: 100 },
+  enter: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 200 } },
+}
+
+const sectionContentMotion = {
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 200 } },
+}
+
+const sectionTitleMotion = {
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+}
+
+const getFeatureItemMotion = (index: number) => ({
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 100 * index } },
+})
+
+const getProductCardMotion = (index: number) => ({
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 15, delay: 100 * index } },
+})
+
+const contactCardMotion = {
+  initial: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 100, damping: 15 } },
+}
+
+const contactButtonMotion = {
+  initial: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, damping: 15, delay: 200 } },
 }
 
 onMounted(() => {

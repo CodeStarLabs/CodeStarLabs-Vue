@@ -12,7 +12,7 @@
           </a-button>
         </div>
         <div class="hero-image" v-motion="heroImageMotion">
-          <!-- <img src="/api/placeholder/600/400" alt="产品展示" class="floating-image" /> -->
+
         </div>
       </section>
 
@@ -261,7 +261,7 @@ onUnmounted(() => {
 
 .hero {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 120px 5%;
+  padding: 165px 5%;
   color: #333;
   display: flex;
   align-items: center;
