@@ -1,22 +1,42 @@
 <template>
+  <a-drawer class="drawer-box" arco-theme="dark" :width="340" :visible="visible" @ok="handleOk" :footer="false" @cancel="handleCancel" unmountOnClose>
+    <template #title>
+    </template>
+    <div style="margin: -12px -16px;">
+      <a-space direction="vertical" class="drawer-content">
+      <div v-for="item in navItems" style="margin-bottom: -8px;">
+      <a-button class="drawer-content-link" long :key="item.name" @click="Links(item.name); handleCancel();">
+          <div>{{ item.label }}</div>
+          
+      </a-button>
+      <div style="padding: 0 20px;"><a-divider class="half-divider" style="margin-bottom: 0; margin-top: 7px;"/></div>
+      </div>
+      </a-space>
+    </div>
+  </a-drawer>
   <a-layout class="code-star-labs">
     <a-layout-header class="header">
       <a-row align="center" justify="space-between">
-        <a-col :span="8">
+        <a-col :span="100">
           <div class="logo-container" @click="home">
             <div class="header-logo"></div>
             <div class="header-title">CodeStarLabs</div>
           </div>
         </a-col>
-        <a-col :span="12">
+        <a-col :span="12" class="header-pc">
           <a-menu mode="horizontal" :selected-keys="[activeIndex]" @menu-item-click="handleMenuClick">
             <a-menu-item v-for="item in navItems" :key="item.name" @click="Links(item.name)">
               {{ item.label }}
             </a-menu-item>
           </a-menu>
         </a-col>
-        <a-col :span="4">
+        <a-col :span="4" class="header-pc">
           <a-button type="primary" shape="round" @click="Login">登录/注册</a-button>
+        </a-col>
+        <a-col :span="2" class="header-mobile">
+          <a-button size="large" shape="round" class="drawer-button" @click="drawerHandleClick">
+            <template #icon><icon-menu-fold /></template>
+          </a-button>
         </a-col>
       </a-row>
     </a-layout-header>
@@ -73,7 +93,7 @@
         </a-col>
       </a-row>
       <a-divider />
-      <a-typography-text class="copyright">Copyright © 2023 - {{currentYear}} Code Star Labs</a-typography-text>
+      <a-typography-text class="copyright">Copyright © 2023 - {{ currentYear }} Code Star Labs</a-typography-text>
     </a-layout-footer>
   </a-layout>
 </template>
@@ -84,6 +104,17 @@ import { useRouter } from 'vue-router';
 
 const currentYear = new Date().getFullYear();
 const router = useRouter();
+const visible = ref(false);
+
+const drawerHandleClick = () => {
+  visible.value = true;
+};
+const handleOk = () => {
+  visible.value = false;
+};
+const handleCancel = () => {
+  visible.value = false;
+}
 
 interface NavItem {
   name: string;
@@ -202,6 +233,28 @@ const setActiveIndex = (path: string) => {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-mobile {
+  display: none;
+}
+
+.drawer-content-link {
+  margin: 0;
+  padding: 26px;
+  font-size: 11pt;
+  margin-bottom: -8px;
+  background-color: #fff;
+}
+
+.drawer-button {
+  background-color: #fff;
+  font-size: 15pt;
+  padding: 5px;
+}
+
+.drawer-content {
+  width: 100%;
 }
 
 .header-logo {
@@ -351,6 +404,14 @@ const setActiveIndex = (path: string) => {
 
   .copyright {
     font-size: 12px;
+  }
+
+  .header-pc {
+    display: none;
+  }
+
+  .header-mobile {
+    display: block;
   }
 }
 </style>
