@@ -18,7 +18,7 @@
           <a-row :gutter="24" class="about-card-content">
             <a-col :span="8">
               <div class="icon-wrapper" v-motion="iconMotion">
-                <img src="/public/about.svg" alt="About" width="300" height="300">
+                <img src="/about.svg" alt="About" width="300" height="300">
               </div>
             </a-col>
             <a-col :span="16">
@@ -287,7 +287,7 @@ useMotion(teamSection, {
 
 /* 英雄区域样式 */
 .hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../public/介绍.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/introduce.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -377,7 +377,7 @@ useMotion(teamSection, {
 /* 愿景和合作部分样式 */
 .vision-section,
 .collaboration-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('../public/创造.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/create.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -386,7 +386,7 @@ useMotion(teamSection, {
 }
 
 .vision-section-2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('../public/发展.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('/development.png');
 }
 
 .vision-section-content {

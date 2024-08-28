@@ -388,7 +388,7 @@ onUnmounted(() => {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 0 5%;
+        padding: 150px 5%;
     }
 
     .hero-title {
