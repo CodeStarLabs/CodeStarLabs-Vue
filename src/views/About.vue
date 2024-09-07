@@ -91,6 +91,7 @@ const isScrolled = ref(false);
 const teamMembers: TeamMember[] = [
     { name: 'CoderMeowHacker', position: '创始人', avatar: 'https://avatars.githubusercontent.com/u/158447241?v=4', GithubUrl: 'https://github.com/codemiao08' },
     { name: 'Soul', position: '前端UI & 管理员', avatar: 'https://avatars.githubusercontent.com/u/155857563?v=4', GithubUrl: 'https://github.com/SoulCodingYanhun' },
+    { name: '广安', position: '开发者', avatar: 'https://avatars.githubusercontent.com/u/110234072?v=4', GithubUrl: 'https://github.com/Guanganawa'}
 ];
 
 const features = [

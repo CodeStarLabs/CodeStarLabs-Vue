@@ -120,6 +120,12 @@ const teamMembers: TeamMember[] = [
     roles: ['前端UI', '管理员'],
     GithubUrl: 'https://github.com/SoulCodingYanhun',
   },
+  {
+    name: '广安',
+    avatar: 'https://avatars.githubusercontent.com/u/110234072?v=4',
+    roles: ['开发者'],
+    GithubUrl: 'https://github.com/Guanganawa'
+  }
 ];
 
 const timelineItems = [

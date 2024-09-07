@@ -1,16 +1,18 @@
 <template>
-  <a-drawer class="drawer-box" arco-theme="dark" :width="340" :visible="visible" @ok="handleOk" :footer="false" @cancel="handleCancel" unmountOnClose>
+  <a-drawer class="drawer-box" arco-theme="dark" :width="340" :visible="visible" @ok="handleOk" :footer="false"
+    @cancel="handleCancel" unmountOnClose>
     <template #title>
     </template>
     <div style="margin: -12px -16px;">
       <a-space direction="vertical" class="drawer-content">
-      <div v-for="item in navItems" style="margin-bottom: -8px;">
-      <a-button class="drawer-content-link" long :key="item.name" @click="Links(item.name); handleCancel();">
-          <div>{{ item.label }}</div>
-          
-      </a-button>
-      <div style="padding: 0 20px;"><a-divider class="half-divider" style="margin-bottom: 0; margin-top: 7px;"/></div>
-      </div>
+        <div v-for="item in navItems" style="margin-bottom: -8px;">
+          <a-button class="drawer-content-link" long :key="item.name" @click="Links(item.name); handleCancel();">
+            <div>{{ item.label }}</div>
+
+          </a-button>
+          <div style="padding: 0 20px;"><a-divider class="half-divider" style="margin-bottom: 0; margin-top: 7px;" />
+          </div>
+        </div>
       </a-space>
     </div>
   </a-drawer>
@@ -23,7 +25,7 @@
             <div class="header-title">CodeStarLabs</div>
           </div>
         </a-col>
-        <a-col :span="12" class="header-pc">
+        <a-col :span="8" class="header-pc">
           <a-menu mode="horizontal" :selected-keys="[activeIndex]" @menu-item-click="handleMenuClick">
             <a-menu-item v-for="item in navItems" :key="item.name" @click="Links(item.name)">
               {{ item.label }}
